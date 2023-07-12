@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const { verifyAccessToken } = require("../middleware/index");
 const {
   getTasks,
   getTask,
