@@ -10,7 +10,6 @@ const valiadateToken = asyncHandler(async (req, res, next) => {
 
   if (authHeader && authHeader.startsWith("Bearer")) {
     token = authHeader.split(" ")[1];
-    console.log(token);
     let user;
     try {
       user = jwt.verify(token, ACCESS_TOKEN_SECRET);
@@ -21,7 +20,6 @@ const valiadateToken = asyncHandler(async (req, res, next) => {
 
     try{
         user = await User.findById(user.id);
-        console.log(user);
         if (!user) {
           return res.status(401).json({ status: false, msg: "User not found" });
         }
