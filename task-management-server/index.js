@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 const authRoutes = require("./routes/authRoutes");
 const taskRoutes = require("./routes/taskroutes");
+const profileRoutes = require("./routes/profileRoutes");
 
 const PORT = process.env.PORT || 5000;
 
