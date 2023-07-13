@@ -92,7 +92,7 @@ const Tasks = () => {
                    
                     <div className="whitespace-pre"> Due Date is:- {task.dueDate.split("T")[0]}</div>
 
-                    <button className={ `${ !task.completed ? "bg-red-700" :  "bg-green-600"   }   px-8 py-3 `}> {task.completed ? "Completed": "Not Completed " }</button>
+                    <button className={ `${ !task.completed ? "bg-red-700 text-white" :  "bg-green-600 text-white"   }   px-8 py-3 `}> {task.completed ? "Completed": "Not Completed " }</button>
                   </div>
                   <div className="whitespace-pre">{task.description}</div>
 
