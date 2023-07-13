@@ -37,6 +37,7 @@ const LoginForm = ({ redirectUrl }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log(formData);
     const errors = validateManyFields("login", formData);
     setFormErrors({});
     if (errors.length > 0) {

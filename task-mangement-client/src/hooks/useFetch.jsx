@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react"
 import { toast } from "react-toastify";
+import api from "../api";
 
 
-const api = "https://advensure-backend.onrender.com"
 const useFetch = () => {
 
   const [state, setState] = useState({
@@ -13,6 +13,7 @@ const useFetch = () => {
   });
 
   const fetchData = useCallback(async (config, otherOptions) => {
+    console.log(config);
     const { showSuccessToast = true, showErrorToast = true } = otherOptions || {};
     setState(state => ({ ...state, loading: true }));
 

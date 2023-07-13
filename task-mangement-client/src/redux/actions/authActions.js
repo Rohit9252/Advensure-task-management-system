@@ -1,9 +1,11 @@
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, SAVE_PROFILE } from "./actionTypes"
 import { toast } from "react-toastify";
+import api from "../../api";
 
 
-const api = "https://advensure-backend.onrender.com"
+// const api = "https://advensure-backend.onrender.com/api"
 export const postLoginData = (email, password) => async (dispatch) => {
+  console.log(email, password);
   try {
     dispatch({ type: LOGIN_REQUEST });
     const { data } = await api.post('/auth/login', { email, password });
@@ -30,7 +32,7 @@ export const postLoginData = (email, password) => async (dispatch) => {
 export const saveProfile = (token) => async (dispatch) => {
   try {
     const { data } = await api.get('/profile', {
-      headers: { Authorization: token }
+      headers: { Authorization: `Bearer `+token }
     });
     dispatch({
       type: SAVE_PROFILE,
