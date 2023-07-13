@@ -6,7 +6,7 @@ const {
   postTask,
   putTask,
   deleteTask,
-} = require("../models/taskControllers");
+} = require("../controllers/taskControllers");
 const validTokenHandler = require("../middleware/validTokenHandler");
 
 router.get("/", validTokenHandler, getTasks);

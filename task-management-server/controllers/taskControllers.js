@@ -1,4 +1,4 @@
-const Task = require("./taskModel");
+const Task = require("../models/taskModel");
 const { validateObjectId } = require("../utils/validateEmail");
 
 exports.getTasks = async (req, res) => {
